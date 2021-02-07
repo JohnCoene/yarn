@@ -12,9 +12,9 @@ install_yarn <- function(){
 #' 
 #' @param ... arguments to pass to the `yarn` command.
 #' 
-#' @keywords internal
-#' 
 #' @importFrom erratum jab enforce w e
+#' 
+#' @export
 yarn_run <- function(...){
   output <- jab(
     system_2(...),

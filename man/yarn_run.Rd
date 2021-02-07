@@ -12,4 +12,3 @@ yarn_run(...)
 \description{
 Yarn Run
 }
-\keyword{internal}

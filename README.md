@@ -25,6 +25,8 @@ install_yarn()
 yarn_init()
 
 yarn_add("browserify", scope = "global")
+
+yarn_run("--version")
 ```
 
 See also [npm](https://github.com/JohnCoene/npm).
