@@ -18,7 +18,9 @@ install_yarn <- function(){
 yarn_run <- function(...){
   output <- jab(
     system_2(...),
-    w = w("failed to run command"),
+    w = function(w){
+      NULL
+    },
     e = e("failed to run command")
   )
   enforce(output)
