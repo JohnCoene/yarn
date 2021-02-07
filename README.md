@@ -5,7 +5,7 @@
 
 # yarn
 
-Interact with yarn from the R console.
+Interact with [yarn](https://yarnpkg.com/) from the R console.
 
 ## Installation
 
@@ -27,3 +27,4 @@ yarn_init()
 yarn_add("browserify", scope = "global")
 ```
 
+See also [npm](https://github.com/JohnCoene/npm).

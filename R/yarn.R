@@ -17,7 +17,7 @@ install_yarn <- function(){
 #' @importFrom erratum jab enforce w e
 yarn_run <- function(...){
   output <- jab(
-    system2("yarn", c(...), stdout = TRUE, stderr = TRUE),
+    system_2(...),
     w = w("failed to run command"),
     e = e("failed to run command")
   )
@@ -31,7 +31,7 @@ yarn_run <- function(...){
 yarn_run_process <- function(..., s, d, f){
   cli_process_start(s, d, f)
   output <- jab(
-    system2("yarn", c(...), stdout = TRUE, stderr = TRUE),
+    system_2(...),
     w = function(w){
       cli_process_failed()
       w("failed to run command")
@@ -48,6 +48,11 @@ yarn_run_process <- function(..., s, d, f){
   cli_process_done()
   
   invisible(output)
+}
+
+#' @keywords internal
+system_2 <- function(...){
+  system2("yarn", c(...), stdout = TRUE, stderr = TRUE)
 }
 
 #' Yarn Init
