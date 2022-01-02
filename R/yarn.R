@@ -12,27 +12,27 @@ install_yarn <- function(){
 #' 
 #' @param ... arguments to pass to the `yarn` command.
 #' 
-#' @importFrom erratum jab enforce w e
+#' @importFrom erratum bash resolve w e
 #' 
 #' @export
 yarn_run <- function(...){
-  output <- jab(
+  output <- bash(
     system_2(...),
     w = function(w){
       NULL
     },
     e = e("failed to run command")
   )
-  enforce(output)
+  resolve(output)
   invisible(output)
 }
 
 #' @keywords internal
 #' @importFrom cli cli_process_start cli_process_failed cli_process_done
-#' @importFrom erratum jab w e is.e is.w
+#' @importFrom erratum bash w e is.e is.w
 yarn_run_process <- function(..., s, d, f){
   cli_process_start(s, d, f)
-  output <- jab(
+  output <- bash(
     system_2(...),
     w = function(w){
       cli_process_done()
