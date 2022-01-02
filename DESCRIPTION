@@ -18,4 +18,5 @@ Imports:
     cli,
     assertthat
 Remotes:
-    JohnCoene/npm
+    JohnCoene/npm,
+    devOpifex/erratum
